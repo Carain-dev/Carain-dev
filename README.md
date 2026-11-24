@@ -35,11 +35,11 @@ Generative AI fundamentals · LLM fundamentals · Prompt engineering · AI-assis
 
 ### Projects
 
-**IVORA: Smart IV Monitoring Prototype** · *capstone, in progress*
+**[IVORA: IV Bag Weight Monitor](https://github.com/Carain-dev/ivora-iv-monitoring)** · *capstone, benchtop prototype*
 <br>
-Healthcare IoT prototype that tracks IV bag weight (load cell → HX711 → ESP32 → Blynk). A FastAPI service polls the readings, estimates the weight-change rate in g/min, raises rule-based flags (possible flow interruption, low weight, bag replacement) and an Isolation Forest anomaly flag, and shows everything on a React dashboard. Currently a single-bed demo; heuristic flags, not clinically validated.
+Load cell → HX711 → ESP32 → Blynk sends IV bag weight to a FastAPI backend. The backend filters the signal, computes mass-loss rate and remaining volume, detects events (flow interruption, high rate, bag replacement, low volume, sensor faults) with rule-based checks and an Isolation Forest sensor-health model, and raises prioritised alarms on a React dashboard. Includes a simulator, calibration tools and detection metrics (precision/recall) kept separate for simulated and physical data. Not a medical device; thresholds are not clinically validated.
 <br>
-`ESP32` `HX711` `Blynk` `FastAPI` `SQLAlchemy` `React` `Vite` `Docker`
+`ESP32` `Blynk` `FastAPI` `PostgreSQL` `React` `Vite` `Docker` `pytest`
 
 **[IEEE EMBS Student Chapter Website](https://github.com/Carain-dev/EMBS-Website)** · [live site](https://embs-website-chi.vercel.app)
 <br>
