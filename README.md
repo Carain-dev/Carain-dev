@@ -19,7 +19,6 @@ Open to software engineering roles in backend and health-tech · carainsridhar@g
 <img src="https://img.shields.io/badge/Node.js-161b22?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js">
 <img src="https://img.shields.io/badge/Express-161b22?style=flat-square&logo=express&logoColor=white" alt="Express">
 <img src="https://img.shields.io/badge/MongoDB-161b22?style=flat-square&logo=mongodb&logoColor=white" alt="MongoDB">
-<img src="https://img.shields.io/badge/Firebase-161b22?style=flat-square&logo=firebase&logoColor=white" alt="Firebase">
 <img src="https://img.shields.io/badge/Streamlit-161b22?style=flat-square&logo=streamlit&logoColor=white" alt="Streamlit">
 
 **AI & generative AI**
@@ -36,11 +35,11 @@ Generative AI fundamentals · LLM fundamentals · Prompt engineering · AI-assis
 
 ### Projects
 
-**IVORA: Multi-Bed IV Monitoring System** · *capstone, in progress*
+**IVORA: Smart IV Monitoring Prototype** · *capstone, in progress*
 <br>
-Healthcare IoT prototype for general wards. Load cells (HX711 → ESP32) track IV bag weight, and the backend turns flow-rate trends into events (flow interruption, free flow, bag change, sensor drift) with risk-ranked alerts on a role-based dashboard for nurses, doctors and biomedical engineers. Two-bed research prototype, not clinically validated.
+Healthcare IoT prototype that tracks IV bag weight (load cell → HX711 → ESP32 → Blynk). A FastAPI service polls the readings, estimates the weight-change rate in g/min, raises rule-based flags (possible flow interruption, low weight, bag replacement) and an Isolation Forest anomaly flag, and shows everything on a React dashboard. Currently a single-bed demo; heuristic flags, not clinically validated.
 <br>
-`ESP32` `Spring Boot` `React` `Python`
+`ESP32` `HX711` `Blynk` `FastAPI` `SQLAlchemy` `React` `Vite` `Docker`
 
 **[IEEE EMBS Student Chapter Website](https://github.com/Carain-dev/EMBS-Website)** · [live site](https://embs-website-chi.vercel.app)
 <br>
@@ -60,11 +59,11 @@ Web platform where admins upload floor maps and define rooms, paths and restrict
 <br>
 `HTML` `CSS` `JavaScript`
 
-**Prosthetic Hand Prototype** · *lab prototype*
+**Prosthetic Hand Prototype** · *bench-test prototype*
 <br>
-Tendon-driven five-finger hand with one servo per finger, controlled by an ESP32. The ESP32's built-in touch sensor stands in for an EMG sensor, and the hand supports selectable grip modes and Bluetooth control.
+ESP32 drives a servo-actuated finger/hand mechanism. A potentiometer is the temporary control input: its ADC reading is mapped to a smoothed servo angle. A Python simulator tests the control logic without hardware. EMG integration is planned, not yet implemented.
 <br>
-`ESP32` `Arduino C++` `Servo control`
+`ESP32` `Arduino C++` `Servo control` `Python`
 
 **[Supermarket Billing System](https://github.com/Carain-dev/Mini-Projects)**
 <br>
